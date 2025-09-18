@@ -1,69 +1,107 @@
-# React + TypeScript + Vite
+# Alert Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable React Alert component built with TypeScript. This component allows you to display various types of alerts, such as danger, success, info, warning, and primary, with custom icons, titles, and descriptions.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technology Stack](#technology-stack)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Multiple Alert Types:** Supports `danger`, `success`, `info`, `warning`, and `primary` alert types.
+- **Customizable:** Easily customize the icon, title, and description of the alert.
+- **Dismissible:** Includes a close button to dismiss the alert.
+- **Responsive:** The component is designed to be responsive and fit well in different screen sizes.
+- **TypeScript:** Built with TypeScript for type safety and better developer experience.
+- **SCSS:** Styled with SCSS for more maintainable and organized styles.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+To get started with the project, follow these steps:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/Alert-Component.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd Alert-Component
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+To use the `Alert` component, import it into your component and pass the required props.
+
+```tsx
+import Alert from "./component/Alert/Alert";
+import { AlertTriangle } from "lucide-react";
+
+function App() {
+  return (
+    <Alert
+      type="danger"
+      icon={<AlertTriangle />}
+      title="Error Occurred"
+      description={
+        <>
+          An error occurred while processing your request.{" "}
+          <a href="#">Please try again</a> later.
+        </>
+      }
+    />
+  );
+}
+
+export default App;
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Props
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Prop          | Type      | Description                                         |
+| ------------- | --------- | --------------------------------------------------- |
+| `type`        | `string`  | The type of the alert (`danger`, `success`, `info`, `warning`, `primary`). |
+| `icon`        | `ReactNode` | The icon to be displayed in the alert.              |
+| `title`       | `string`  | The title of the alert.                             |
+| `description` | `ReactNode` | The description or message of the alert.            |
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Technology Stack
+
+- **React:** A JavaScript library for building user interfaces.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Sass:** A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+- **Vite:** A build tool that aims to provide a faster and leaner development experience for modern web projects.
+- **ESLint:** A static code analysis tool for identifying problematic patterns found in JavaScript code.
+- **Lucide React:** A library of simply designed, beautiful icons.
+
+## Contribution Guidelines
+
+Contributions are welcome! If you have any suggestions, bug reports, or want to contribute to the codebase, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/your-feature-name`).
+6. Open a pull request.
+
+## License
+
+This project is not licensed.
+
+## Contact
+
+Mohamed Elsheshtawey - [LinkedIn](https://www.linkedin.com/in/mohamed-elsheshtawey/)
